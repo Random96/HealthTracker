@@ -3,25 +3,22 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_transform">
+    app:startDestination="@+id/nav_drug">
 
     <fragment
-        android:id="@+id/nav_transform"
-        android:name="ru.emlsoft.healthtracker.ui.transform.TransformFragment"
-        android:label="@string/menu_transform"
-        tools:layout="@layout/fragment_transform" />
+        android:id="@+id/nav_drug"
+        android:name="ru.emlsoft.healthtracker.ui.drug.DrugFragment"
+        android:label="@string/menu_drug" />
 
     <fragment
-        android:id="@+id/nav_reflow"
-        android:name="ru.emlsoft.healthtracker.ui.reflow.ReflowFragment"
-        android:label="@string/menu_reflow"
-        tools:layout="@layout/fragment_reflow" />
+        android:id="@+id/nav_order"
+        android:name="ru.emlsoft.healthtracker.ui.order.OrderFragment"
+        android:label="@string/menu_order" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="ru.emlsoft.healthtracker.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        android:id="@+id/nav_schedule"
+        android:name="ru.emlsoft.healthtracker.ui.schedule.ScheduleFragment"
+        android:label="@string/menu_schedule" />
 
     <fragment
         android:id="@+id/nav_settings"
