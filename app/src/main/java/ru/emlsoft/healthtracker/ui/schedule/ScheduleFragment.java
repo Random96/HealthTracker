@@ -10,22 +10,21 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import ru.emlsoft.healthtracker.databinding.FragmentReflowBinding;
-import ru.emlsoft.healthtracker.ui.drug.DrugViewModel;
+import ru.emlsoft.healthtracker.databinding.FragmentSchedulerBinding;
 
 public class ScheduleFragment extends Fragment {
 
-    private FragmentReflowBinding binding;
+    private FragmentSchedulerBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         ScheduleViewModel scheduleViewModel =
                 new ViewModelProvider(this).get(ScheduleViewModel.class);
 
-        binding = FragmentReflowBinding.inflate(inflater, container, false);
+        binding = FragmentSchedulerBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textReflow;
+        final TextView textView = binding.textSchedule;
         scheduleViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
     }

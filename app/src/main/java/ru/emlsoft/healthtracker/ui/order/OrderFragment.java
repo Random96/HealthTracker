@@ -10,22 +10,22 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import ru.emlsoft.healthtracker.databinding.FragmentReflowBinding;
-import ru.emlsoft.healthtracker.ui.order.OrderViewModel;
+import ru.emlsoft.healthtracker.databinding.FragmentOrderBinding;
 
 public class OrderFragment  extends Fragment {
 
-    private FragmentReflowBinding binding;
+    private FragmentOrderBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
+
         OrderViewModel orderViewModel =
                 new ViewModelProvider(this).get(OrderViewModel.class);
 
-        binding = FragmentReflowBinding.inflate(inflater, container, false);
+        binding = FragmentOrderBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textReflow;
+        final TextView textView = binding.textOrder;
         orderViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
     }

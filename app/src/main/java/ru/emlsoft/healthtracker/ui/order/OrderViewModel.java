@@ -7,7 +7,7 @@ import androidx.lifecycle.ViewModel;
 public class OrderViewModel  extends ViewModel {
     private final MutableLiveData<String> mText;
 
-    public OrderViewModel(OrderFragment orderFragment) {
+    public OrderViewModel() {
         mText = new MutableLiveData<>();
         mText.setValue("This is order fragment");
     }
