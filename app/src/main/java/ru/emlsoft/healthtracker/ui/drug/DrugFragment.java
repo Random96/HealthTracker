@@ -9,6 +9,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.RecyclerView;
 
 import ru.emlsoft.healthtracker.databinding.FragmentDrugBinding;
 
@@ -24,8 +25,11 @@ public class DrugFragment extends Fragment {
         binding = FragmentDrugBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textDrug;
-        drugViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+
+        final RecyclerView view = binding.recyclerViewDrug;
+        drugViewModel.getDrugs().observe(getViewLifecycleOwner(), view::setTag);
+
+
         return root;
     }
 
