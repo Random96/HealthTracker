@@ -9,8 +9,10 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.ListAdapter;
 import androidx.recyclerview.widget.RecyclerView;
 
+import ru.emlsoft.healthtracker.adapters.DrugAdapter;
 import ru.emlsoft.healthtracker.databinding.FragmentDrugBinding;
 
 public class DrugFragment extends Fragment {
@@ -27,8 +29,9 @@ public class DrugFragment extends Fragment {
 
 
         final RecyclerView view = binding.recyclerViewDrug;
-        drugViewModel.getDrugs().observe(getViewLifecycleOwner(), view::setTag);
-
+        DrugAdapter adapter = new DrugAdapter();
+        view.setAdapter(adapter);
+        drugViewModel.getDrugs().observe(getViewLifecycleOwner(), adapter::submitList);
 
         return root;
     }
